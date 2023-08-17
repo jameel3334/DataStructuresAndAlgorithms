@@ -3,5 +3,7 @@
     <pages>
         <page name='Stack'/>
         <page name='Stack Challenge'/>
+        <page name='Node'/>
+        <page name='Linked List'/>
     </pages>
 </playground>

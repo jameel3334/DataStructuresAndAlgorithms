@@ -1,6 +1,8 @@
 //: [Previous](@previous)
 
 import Foundation
+
+
 public struct Stack<Element> {
     private var storage: [Element] = []
     public init() { }
@@ -36,6 +38,7 @@ extension Stack: ExpressibleByArrayLiteral {
     storage = elements
   }
 }
+
 
 //Challenge 1: Reverse an Array
 //Create a function that uses a stack to print the contents of an array in reversed order.
