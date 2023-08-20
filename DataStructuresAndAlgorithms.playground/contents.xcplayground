@@ -5,5 +5,7 @@
         <page name='Stack Challenge'/>
         <page name='Node'/>
         <page name='Linked List'/>
+        <page name='Linked List Challenge'/>
+        <page name='Queue'/>
     </pages>
 </playground>
