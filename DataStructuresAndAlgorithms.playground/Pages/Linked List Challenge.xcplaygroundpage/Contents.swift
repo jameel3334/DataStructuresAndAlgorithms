@@ -316,38 +316,41 @@ print("Merged list: \(mergedList)")
 // list after removing all occurrences of 3
 //1 -> 4
 
-//extension LinkedList {
-//    mutating func removeAll(_ value: Value?) {
-//
-//        while let head = head, head.value == value {
-//            head = head?.next
-//        }
-//        //UNLINKING THE NODES
-//        var prev = head
-//        var current = head?.next
-//        while let currentNode = current {
-//            guard currentNode.value != value else {
-//                prev?.next = currentNode.next
-//                current = prev?.next
-//                continue
-//            }
-//            prev = current
-//            current = current?.next
-//
-//        }
-//        tail = prev
-//    }
-//}
-//
-////example(of: "deleting duplicate nodes") {
-//var list5 = LinkedList<Int>()
-//list5.push(3)
-//list5.push(2)
-//list5.push(2)
-//list5.push(1)
-//list5.push(1)
-//list5.removeAll(3)
-//print(list5)
+extension LinkedList where Value: Equatable {
+  
+  mutating func removeAll(_ value: Value) {
+    while let head = self.head, head.value == value {
+      self.head = head.next
+    }
+    var prev = head
+    var current = head?.next
+    while let currentNode = current {
+      if currentNode.next == nil {
+        tail
+      }
+      guard currentNode.value != value else {
+        prev?.next = currentNode.next
+        current = prev?.next
+        continue
+      }
+      prev = current
+      current = current?.next
+    }
+    tail = prev
+  }
+}
+
+//example(of: "deleting duplicate nodes") {
+  var list5 = LinkedList<Int>()
+  list5.push(3)
+  list5.push(2)
+  list5.push(2)
+  list5.push(1)
+  list5.push(1)
+  
+  list5.removeAll(3)
+  print(list5)
+
 
 
 //: [Next](@next)
